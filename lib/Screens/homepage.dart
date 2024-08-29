@@ -11,7 +11,7 @@ class DatePicker extends StatefulWidget {
 class _DatePickerState extends State<DatePicker> {
   List<DateTime> _dates = [];
   DateTime _selectedDate = DateTime.now();
-
+  List<String> items = ['item 1', 'item 2', 'item 3'];
   @override
   void initState() {
     super.initState();
@@ -109,6 +109,46 @@ class _DatePickerState extends State<DatePicker> {
                                   ),
                                 ],
                               ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+              // Task list
+              const SizedBox(height: 10),
+              Container(
+                height: 250,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  border: Border.all(color: Colors.black),
+                ),
+              ),
+              const SizedBox(height: 10),
+              Container(
+                height: 250,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  border: Border.all(color: Colors.black),
+                ),
+                child: ListView.builder(
+                  itemCount: items.length,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 8.0, vertical: 2),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.grey.withOpacity(0.3)),
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        child: TextField(
+                          controller: TextEditingController(text: items[index]),
+                          decoration: InputDecoration(
+                            disabledBorder: InputBorder.none,
+                            enabledBorder: InputBorder.none,
+                            focusedBorder: InputBorder.none,
+                          ),
+                        ),
                       ),
                     );
                   },
