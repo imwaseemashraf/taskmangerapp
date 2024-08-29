@@ -20,7 +20,7 @@ class _DatePickerState extends State<DatePicker> {
 
   void _generateDates() {
     final now = DateTime.now();
-    _dates = List.generate(30, (index) => now.add(Duration(days: index)));
+    _dates = List.generate(200, (index) => now.add(Duration(days: index)));
   }
 
   @override
@@ -48,7 +48,6 @@ class _DatePickerState extends State<DatePicker> {
                       dateText = DateFormat('d').format(date);
                       // print(dateDayRemaining);
                     }
-
                     return GestureDetector(
                       onTap: () {
                         setState(() {
