@@ -143,7 +143,7 @@ class _DatePickerState extends State<DatePicker> {
                         padding: const EdgeInsets.symmetric(horizontal: 10),
                         child: TextField(
                           controller: TextEditingController(text: items[index]),
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             disabledBorder: InputBorder.none,
                             enabledBorder: InputBorder.none,
                             focusedBorder: InputBorder.none,
